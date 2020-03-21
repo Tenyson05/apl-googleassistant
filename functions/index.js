@@ -1,13 +1,20 @@
 const functions = require('firebase-functions');
-import { dialogflow } from 'actions-on-google';
+const { dialogflow } = require('actions-on-google');
 
-const app = () => ({
+const app = dialogflow({
 	debug: true
 });
+/*
+Change conv.close to conv.ask
 
+*/
 // capture intent 
-app.intent('APL welcome class', (conv) => {
-	conv.close("APL class of 2019/2020 semester 2 project done by Rojah, Brittany and Stern")
+app.intent('Group members', (conv) => {
+	conv.conv("APL class of 2019/2020 semester 2 project done by Rojah, Brittany and Stern")
+})
+
+app.intent('What is semantics?', (conv) => {
+	conv.close("Semantics is the process a computer follows when executing a program in a specific language. This is shown by describing the relationship between the input and the output of a program and how it will be executed on a certain platform by creating a model of computation. Three types of semantic include denotational, operational and axiomatic semantic.");
 })
 
 

@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "apl-class"
+    "class": "apl-class",
+    "apl": "aplproject-1238c"
   }
 }
